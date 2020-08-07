@@ -19,6 +19,7 @@ function TeacherList() {
               { label: 'Artes', value: 'Artes' },
               { label: 'Física', value: 'Física' },
               { label: 'Quimica', value: 'Quimica' },
+              { label: 'Direito', value: 'Direito' },
               { label: 'Biologia', value: 'Biologia' },
               { label: 'Ciências', value: 'Ciências' },
               { label: 'História', value: 'História' },
@@ -32,13 +33,13 @@ function TeacherList() {
             name="week_day"
             label="Dia da semana"
             options={[
-              { label: '0', value: 'Domingo' },
-              { label: '1', value: 'Segunda-feira' },
-              { label: '2', value: 'Terça-feira' },
-              { label: '3', value: 'Quarta-feira' },
-              { label: '4', value: 'Quinta-feira' },
-              { label: '5', value: 'Sexta-feira' },
-              { label: '6', value: 'Sábado' },
+              { value: '0', label: 'Domingo' },
+              { value: '1', label: 'Segunda-feira' },
+              { value: '2', label: 'Terça-feira' },
+              { value: '3', label: 'Quarta-feira' },
+              { value: '4', label: 'Quinta-feira' },
+              { value: '5', label: 'Sexta-feira' },
+              { value: '6', label: 'Sábado' },
             ]}
           />
           <Input type="time" name="time" label="Hora" />
