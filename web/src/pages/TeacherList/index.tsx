@@ -2,10 +2,10 @@ import React, { useState, FormEvent } from 'react';
 
 import api from '../../services/api';
 
-import PageHeader from '../../components/PageHeader';
-import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
+import PageHeader from '../../components/PageHeader';
+import TeacherItem, { Teacher } from '../../components/TeacherItem';
 
 import './styles.css';
 
@@ -18,17 +18,18 @@ function TeacherList() {
   async function searchTeachers(e: FormEvent) {
     e.preventDefault();
 
-    console.log(subject, weekDay, time);
-
-    const response = await api.get('classes', {
-      params: {
-        week_day: weekDay,
-        subject,
-        time,
-      },
-    });
-
-    setTeachers(response.data);
+    try {
+      const response = await api.get('classes', {
+        params: {
+          week_day: weekDay,
+          subject,
+          time,
+        },
+      });
+      setTeachers(response.data);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
