@@ -10,7 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 
 interface PageHeaderProps {
   title: string;
-  headerRight: ReactNode;
+  headerRight?: ReactNode;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({

@@ -8,6 +8,7 @@ import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 
 import { Feather } from '@expo/vector-icons';
 import api from '../../services/api';
+import { useFocusEffect } from '@react-navigation/native';
 
 function TeacherList() {
   const [teachers, setTeachers] = useState([]);
@@ -31,6 +32,10 @@ function TeacherList() {
       }
     });
   }
+
+  useFocusEffect(() => {
+    loadFavorites();
+  });
 
   function handleToggleFiltersVisible() {
     setIsFilterVisible(!isFilterVisible);
